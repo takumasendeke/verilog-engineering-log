@@ -1,0 +1,24 @@
+digraph "simple_in_n_out" {
+label="simple_in_n_out";
+rankdir="LR";
+remincross=true;
+n3 [ shape=octagon, label="out_2", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="out_1", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="in_3", color="black", fontcolor="black"];
+n6 [ shape=octagon, label="in_2", color="black", fontcolor="black"];
+n7 [ shape=octagon, label="in_1", color="black", fontcolor="black"];
+c11 [ shape=record, label="{{<p8> A|<p9> B}|$81\n$_OR_|{<p10> Y}}",  ];
+c12 [ shape=record, label="{{<p8> A|<p9> B}|$82\n$_OR_|{<p10> Y}}",  ];
+c13 [ shape=record, label="{{<p8> A|<p9> B}|$83\n$_AND_|{<p10> Y}}",  ];
+c14 [ shape=record, label="{{<p8> A|<p9> B}|$84\n$_AND_|{<p10> Y}}",  ];
+c11:p10:e -> c12:p9:w [color="black", fontcolor="black", label=""];
+c13:p10:e -> c14:p9:w [color="black", fontcolor="black", label=""];
+c12:p10:e -> n3:w [color="black", fontcolor="black", label=""];
+c14:p10:e -> n4:w [color="black", fontcolor="black", label=""];
+n5:e -> c11:p8:w [color="black", fontcolor="black", label=""];
+n5:e -> c13:p8:w [color="black", fontcolor="black", label=""];
+n6:e -> c12:p8:w [color="black", fontcolor="black", label=""];
+n6:e -> c14:p8:w [color="black", fontcolor="black", label=""];
+n7:e -> c11:p9:w [color="black", fontcolor="black", label=""];
+n7:e -> c13:p9:w [color="black", fontcolor="black", label=""];
+}

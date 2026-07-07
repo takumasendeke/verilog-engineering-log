@@ -1,0 +1,11 @@
+# Ignore simulation binaries
+*.vvp
+*.out
+
+# Ignore massive waveform data files
+*.vcd
+*.ghw
+
+# Ignore Yosys logs and temporary build files
+*.log
+*.blif

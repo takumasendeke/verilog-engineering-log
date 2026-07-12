@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////
+// Takudzwa Antony Masendeke 
+// First Verilog program a simple in and out system 
+// 
+// NOTE: This testbench was AI generated for the sake of viewing 
+// my first gtkwaveform and netlists
+//
+// Will update when I formally learn to write clean test benches
+/////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
 module tb_simple_in_n_out;

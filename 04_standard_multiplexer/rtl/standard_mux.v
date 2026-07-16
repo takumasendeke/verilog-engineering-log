@@ -15,7 +15,7 @@ module standard_mux // module/file name
     in_3,
 
     // Outputs
-    out_1;
+    out_1
 
 );
 

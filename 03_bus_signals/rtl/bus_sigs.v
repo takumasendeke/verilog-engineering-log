@@ -7,7 +7,7 @@
 // By: Blaine C. Readler
 /////////////////////////////////////////////////////////////////////
 
-module simple_in_n_out // module/file name
+module bus_sigs // module/file name
 (
     // Inputs
    in_1,

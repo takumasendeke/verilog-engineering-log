@@ -9,7 +9,7 @@
 
 module dflop_en_clr(
     input wire enable,
-    input wire clear,
+    input wire clear_n, // naming convention fix (use _n for active low)
     input wire clk,
     input wire reset,
 
@@ -25,7 +25,7 @@ always @(posedge clk or posedge reset )
     begin
         if (reset)
             out_1 <= 1'b0;
-        else if (clear == 1'b0)
+        else if (clear_n == 1'b0)
             out_1 <= 1'b0;
         else if (enable)
             out_1 <= in_1;

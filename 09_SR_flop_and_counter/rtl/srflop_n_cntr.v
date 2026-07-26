@@ -38,7 +38,7 @@ always @ (posedge clk or posedge reset)
             cnt_en <= 1'b0;
         else if (start)
             cnt_en <= 1'b1;
-        else if 
+        else if (stop)
             cnt_en <= 1'b0;
     end
 

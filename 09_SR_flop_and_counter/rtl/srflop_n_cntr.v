@@ -30,6 +30,7 @@ reg stop_d1;
 reg stop_d2;
 
 // Design implementation
+
 // SR flop
 always @ (posedge clk or posedge reset)
     begin
@@ -39,6 +40,32 @@ always @ (posedge clk or posedge reset)
             cnt_en <= 1'b1;
         else if 
             cnt_en <= 1'b0;
+    end
+
+// Counter 
+always @ (posedge clk or posedge reset)
+    begin
+        if (reset)
+            count <= 4'h0;
+        else if (cnt_en && count == 4'd13)
+            count <= 4'h0;
+        else if (cnt_en)
+            count <= count + 1; 
+    end
+
+// Delay
+always @ (posedge clk or posedge reset) 
+    begin
+        if (reset)
+            begin 
+                stop_d1 <= 1'b0;
+                stop_d2 <= 1'b0;
+            end
+        else 
+            begin
+                stop_d1 <= stop;
+                stop_d2 <= stop_d1;
+            end
     end
 
 endmodule

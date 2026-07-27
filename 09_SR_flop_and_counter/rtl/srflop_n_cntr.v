@@ -40,6 +40,7 @@ always @ (posedge clk or posedge reset)
             cnt_en <= 1'b1;
         else if (stop)
             cnt_en <= 1'b0;
+        // No else statement to act as a latch
     end
 
 // Counter 
@@ -47,6 +48,7 @@ always @ (posedge clk or posedge reset)
     begin
         if (reset)
             count <= 4'h0;
+        // &&,|| boolean vs &,| bitwise
         else if (cnt_en && count == 4'd13)
             count <= 4'h0;
         else if (cnt_en)
@@ -56,6 +58,7 @@ always @ (posedge clk or posedge reset)
 // Delay
 always @ (posedge clk or posedge reset) 
     begin
+        // use begin & end to manage scope
         if (reset)
             begin 
                 stop_d1 <= 1'b0;
@@ -68,4 +71,6 @@ always @ (posedge clk or posedge reset)
             end
     end
 
+// All the always blocks could be put into 1 
+// but this may be unsafe and less readable
 endmodule

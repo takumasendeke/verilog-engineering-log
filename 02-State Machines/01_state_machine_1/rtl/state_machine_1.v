@@ -73,5 +73,16 @@ always @ (posedge clk or posedge reset)
             else if (state_reg == active)
                 count <= count + 1;
         end
+    
+    // Done Register
+    always @ (posedge clk or posedge reset)
+    begin
+        if (reset)
+            done <= 1'b0;
+        else if (state_reg == finish)
+            done <= 1'b1;
+        else
+            done <= 1'b0; 
+    end
 
 endmodule
